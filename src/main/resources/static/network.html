@@ -1,0 +1,71 @@
+﻿﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>物联网络 — 万物有灵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=13">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="app">
+    <div id="appShell"></div>
+    <main class="page-main page-network">
+      <div class="page-toolbar">
+        <label class="toolbar-label">配置目标主体</label>
+        <select id="entitySelect" class="entity-select"></select>
+      </div>
+      <div class="network-grid">
+        <section class="panel">
+          <div class="panel-header">
+            <span class="panel-title">数据采集协议</span>
+            <span class="tag">PROTOCOL</span>
+          </div>
+          <div class="panel-body">
+            <div class="protocol-grid" id="protocolGrid"></div>
+            <div class="form-group">
+              <label>上报端点 / Broker</label>
+              <input type="text" id="endpointInput" placeholder="自动根据协议生成">
+            </div>
+            <div class="form-group">
+              <label>主题 / Topic</label>
+              <input type="text" id="topicInput" placeholder="ecovoice/entity/{id}/vitals">
+            </div>
+            <button class="btn" id="btnApplyNetwork">应用组网配置</button>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-header">
+            <span class="panel-title">数据接入与模拟</span>
+            <span class="tag">INGEST</span>
+          </div>
+          <div class="panel-body">
+            <p class="panel-hint">通过手动上报或模拟采集，向平台注入体征数据，触发 AI 诉求分析。</p>
+            <div class="form-group">
+              <label>手动上报（模拟节点）</label>
+              <select id="ingestSensor"></select>
+            </div>
+            <div class="form-group">
+              <label>数值</label>
+              <input type="number" id="ingestValue" step="0.01" value="7.0">
+            </div>
+            <button class="btn btn-secondary" id="btnManualIngest">按当前协议上报</button>
+            <button class="btn" id="btnSimulate" style="margin-top:8px">触发单次模拟采集</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="/js/shell.js?v=8"></script>
+  <script src="/js/network.js?v=8"></script>
+</body>
+</html>
+
+
+
+
+

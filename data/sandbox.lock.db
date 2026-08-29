@@ -1,0 +1,6 @@
+#FileLock
+#Tue Jun 23 22:26:43 CST 2026
+server=192.168.10.13\:32177
+hostName=zyl
+method=file
+id=19ef4e056867a6149c701a1f43e195db4c420b4ebb6

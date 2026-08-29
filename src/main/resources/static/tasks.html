@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>任务大厅 — 万物有灵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=13">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="app">
+    <div id="appShell"></div>
+    <main class="page-main page-tasks">
+      <section class="hero-panel ledger-hero">
+        <div class="hero-badge">HUMAN NODE · BOUNTY TASKS</div>
+        <h1 class="hero-title" style="font-size:1.2rem">生态任务大厅</h1>
+        <p class="hero-desc">
+          每位人类都是分布式网络中的一个<strong>对等节点</strong>。自然权利主体发布链上悬赏，
+          您可接取任务、履行生态行动，完成后获得 <strong>生态币(ECO)</strong> 代币报酬。
+        </p>
+      </section>
+      <div class="tasks-tabs">
+        <button class="stream-tab active" data-tab="open">可接取任务</button>
+        <button class="stream-tab" data-tab="mine">我的任务</button>
+        <button class="stream-tab" data-tab="nodes">人类节点网络</button>
+      </div>
+      <section class="panel tab-panel" id="panelOpen">
+        <div class="panel-header">
+          <span class="panel-title">全平台开放悬赏</span>
+          <span class="tag">OPEN BOUNTIES</span>
+        </div>
+        <div class="panel-body">
+          <div class="task-list" id="openTaskList"></div>
+        </div>
+      </section>
+      <section class="panel tab-panel hidden" id="panelMine">
+        <div class="panel-header">
+          <span class="panel-title">我已接取的任务</span>
+          <span class="tag">MY TASKS</span>
+        </div>
+        <div class="panel-body">
+          <div class="task-list" id="myTaskList"></div>
+        </div>
+      </section>
+      <section class="panel tab-panel hidden" id="panelNodes">
+        <div class="panel-header">
+          <span class="panel-title">人类节点网络</span>
+          <span class="tag">PEER NODES</span>
+        </div>
+        <div class="panel-body">
+          <div class="human-node-grid" id="humanNodeGrid"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="modal hidden" id="completeModal">
+    <div class="modal-box">
+      <h3>提交任务完成</h3>
+      <p class="modal-hint" id="completeHint"></p>
+      <div class="form-group">
+        <label>履行说明</label>
+        <input type="text" id="proofNote" placeholder="简述您已完成的生态行动">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary btn-sm" id="btnCancelComplete">取消</button>
+        <button class="btn btn-sm" id="btnConfirmComplete">提交完成 · 领取 生态币(ECO)</button>
+      </div>
+    </div>
+  </div>
+  <script src="/js/shell.js?v=8"></script>
+  <script src="/js/tasks.js?v=8"></script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:file:./target/test-sandbox.db
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+sandbox:
+  simulation:
+    enabled: false

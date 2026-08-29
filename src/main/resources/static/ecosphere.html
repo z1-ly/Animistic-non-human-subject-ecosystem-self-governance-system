@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生态币 · 全平台价值流通</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=13">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="app">
+    <div id="appShell"></div>
+    <main class="page-main page-ledger">
+      <section class="hero-panel ledger-hero">
+        <div class="hero-badge">ECO · ECOLOGICAL CURRENCY</div>
+        <h1 class="hero-title" style="font-size:1.2rem">生态币 —— 自然 · 人类 · 跨生态单元的价值闭环</h1>
+        <p class="hero-desc">
+          生态币总量恒定，流通于<strong>自然体钱包</strong>与<strong>人类节点钱包</strong>之间。
+          自然体对生态增量增发并发布悬赏，人类履行生态治理获得收益；人类消耗资源、破坏生态时，生态币回流对应自然体作为修复资金。跨生态节点之间亦可相互转账，结算碳汇、调洪、空气净化等生态协同服务。
+        </p>
+        <div class="eco-stats" id="ecoStats">加载中...</div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">生态增量增发（从储备库铸造到目标自然体）</span>
+          <span class="tag">REGENERATION MINT</span>
+        </div>
+        <div class="panel-body form-grid">
+          <div class="form-group">
+            <label>目标自然体</label>
+            <select id="regenEntityId" class="form-control"></select>
+          </div>
+          <div class="form-group">
+            <label>增发数量（生态币 ECO）</label>
+            <input id="regenAmount" type="number" min="1" step="1" value="50" class="form-control" />
+          </div>
+          <div class="form-group form-wide">
+            <label>理由</label>
+            <input id="regenReason" type="text" value="植树行动带来生态增量" class="form-control" />
+          </div>
+          <div class="form-group form-wide">
+            <button class="btn" id="btnRegenerate">✦ 为指定自然体增发生态币</button>
+            <span class="form-hint">该操作仅在"生态币剩余可增发储备"范围内生效。</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">人类节点消耗生态资源 → 回流自然体</span>
+          <span class="tag">ECO FEE · REFLUX</span>
+        </div>
+        <div class="panel-body form-grid">
+          <div class="form-group">
+            <label>支付者（人类节点）</label>
+            <select id="spendHumanId" class="form-control"></select>
+          </div>
+          <div class="form-group">
+            <label>被消耗或受影响的自然体</label>
+            <select id="spendEntityId" class="form-control"></select>
+          </div>
+          <div class="form-group">
+            <label>消耗类别</label>
+            <select id="spendCategory" class="form-control">
+              <option value="EMISSION">碳排放 (EMISSION)</option>
+              <option value="WATER">水资源占用 (WATER)</option>
+              <option value="LAND">土地/林地占用 (LAND)</option>
+              <option value="RESOURCE">其他生态资源消耗 (RESOURCE)</option>
+              <option value="DESTRUCTION">重度破坏/砍伐 (DESTRUCTION)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>基础金额</label>
+            <input id="spendBaseAmount" type="number" min="0" step="1" value="10" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>严重系数（1.0 正常，≥ 2.0 加倍扣除）</label>
+            <input id="spendSeverity" type="number" min="1" step="0.1" value="1.0" class="form-control" />
+          </div>
+          <div class="form-group form-wide">
+            <label>备注</label>
+            <input id="spendNote" type="text" value="一般办公碳排放" class="form-control" />
+          </div>
+          <div class="form-group form-wide">
+            <button class="btn" id="btnSpend">✦ 提交消耗并回流生态币</button>
+            <span class="form-hint">系统会按 baseAmount * severityMultiplier 从人类钱包扣除，并汇入所选自然体钱包。</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">跨自然体转账结算（碳汇/调洪/空气净化等）</span>
+          <span class="tag">ENTITY TRANSFER</span>
+        </div>
+        <div class="panel-body form-grid">
+          <div class="form-group">
+            <label>转出自然体（付费者）</label>
+            <select id="tfFromId" class="form-control"></select>
+          </div>
+          <div class="form-group">
+            <label>转入自然体（受益者）</label>
+            <select id="tfToId" class="form-control"></select>
+          </div>
+          <div class="form-group">
+            <label>转账金额（ECO）</label>
+            <input id="tfAmount" type="number" min="1" step="1" value="20" class="form-control" />
+          </div>
+          <div class="form-group form-wide">
+            <label>结算事由</label>
+            <input id="tfReason" type="text" value="调洪服务结算" class="form-control" />
+          </div>
+          <div class="form-group form-wide">
+            <button class="btn" id="btnTransfer">✦ 发起跨生态单元转账</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">兑换生态资源目录</span>
+          <span class="tag">REDEEM CATALOG</span>
+        </div>
+        <div class="panel-body">
+          <p class="hero-desc" style="margin-bottom:12px">
+            人类可使用生态币向非人自然主体兑换 14 类生态价值资源。点击下方进入专用兑换页面，查看定价并完成兑换。
+          </p>
+          <div class="redeem-catalog-mini" id="redeemCatalogMini">加载中...</div>
+          <a href="/redeem.html" class="btn" style="margin-top:14px;display:inline-block">⟡ 进入兑换生态资源页面 →</a>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">生态币链上交易流</span>
+          <span class="tag">TRANSACTIONS</span>
+        </div>
+        <div class="panel-body">
+          <div class="tx-list" id="txList">加载中...</div>
+        </div>
+      </section>
+
+      <div class="result-box hidden" id="resultBox">
+        <div class="result-head">服务端返回</div>
+        <pre id="resultContent"></pre>
+      </div>
+    </main>
+  </div>
+  <script src="/js/shell.js?v=8"></script>
+  <script src="/js/ecosphere.js?v=8"></script>
+</body>
+</html>
+
+
+
+
+

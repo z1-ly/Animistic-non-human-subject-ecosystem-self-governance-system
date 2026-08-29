@@ -1,0 +1,57 @@
+﻿﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实时数据流 — 万物有灵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=13">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="app">
+    <div id="appShell"></div>
+    <main class="page-main page-stream">
+      <div class="page-toolbar">
+        <label class="toolbar-label">筛选主体</label>
+        <select id="entityFilter" class="entity-select">
+          <option value="">全部权利主体</option>
+        </select>
+        <span><span class="status-dot" id="wsStatus"></span><span id="wsLabel">连接中...</span></span>
+      </div>
+      <section class="panel panel-stream-charts">
+        <div class="panel-header"><span class="panel-title">全平台体征趋势</span></div>
+        <div class="panel-body">
+          <div class="chart-row" id="chartRow">
+            <div class="chart-box"><h4>水质 pH</h4><div class="chart-canvas-wrap"><canvas id="chartPH"></canvas></div></div>
+            <div class="chart-box"><h4>土壤湿度</h4><div class="chart-canvas-wrap"><canvas id="chartSoil"></canvas></div></div>
+            <div class="chart-box"><h4>空气温度</h4><div class="chart-canvas-wrap"><canvas id="chartTemp"></canvas></div></div>
+            <div class="chart-box"><h4>空气湿度</h4><div class="chart-canvas-wrap"><canvas id="chartHumid"></canvas></div></div>
+            <div class="chart-box"><h4>声音分贝</h4><div class="chart-canvas-wrap"><canvas id="chartSound"></canvas></div></div>
+          </div>
+        </div>
+      </section>
+      <section class="panel panel-stream-list">
+        <div class="panel-header">
+          <span class="panel-title">生命体征流</span>
+          <span class="tag">STREAM</span>
+        </div>
+        <div class="panel-body">
+          <div class="stream-list stream-list-large" id="streamList"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/js/shell.js?v=8"></script>
+  <script src="/js/stream.js?v=8"></script>
+</body>
+</html>
+
+
+
+
+

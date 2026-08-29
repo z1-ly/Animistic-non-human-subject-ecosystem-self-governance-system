@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>主权诉求 — 万物有灵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=15">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="app">
+    <div id="appShell"></div>
+    <main class="page-main page-appeals">
+      <div class="page-toolbar">
+        <label class="toolbar-label">当前权利主体</label>
+        <select id="entitySelect" class="entity-select"></select>
+      </div>
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">自然诉求卡 · 链上悬赏</span>
+          <span class="tag">BOUNTY APPEALS</span>
+        </div>
+        <div class="panel-body">
+          <div class="appeal-cards-grid" id="appealCards">
+            <div class="appeal-empty">暂无诉求，权利主体状态平稳</div>
+          </div>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">生态情绪指数</span>
+          <span class="tag">EMOTION INDEX</span>
+        </div>
+        <div class="panel-body">
+          <div class="emotion-banner emotion-banner-large" id="emotionBanner">
+            <div class="emotion-gauge">
+              <div class="emotion-score" id="emotionScore">--</div>
+              <div class="emotion-label">生态情绪指数</div>
+            </div>
+            <div class="emotion-detail">
+              <div class="entity-hero compact" id="entityHero"></div>
+              <div class="emotion-state" id="emotionState">待评估</div>
+              <div class="emotion-summary" id="emotionSummary">基于历史体征综合分析</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">生态情绪日志</span>
+          <span class="tag">LOG</span>
+        </div>
+        <div class="panel-body">
+          <div class="stream-list emotion-log-list emotion-log-large" id="emotionLogList"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="modal hidden" id="fulfillModal">
+    <div class="modal-box">
+      <h3>提交任务完成</h3>
+      <p class="modal-hint" id="fulfillHint"></p>
+      <div class="form-group">
+        <label>履行说明</label>
+        <input type="text" id="proofNote" placeholder="简述已完成的生态行动">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary btn-sm" id="btnCancelFulfill">取消</button>
+        <button class="btn btn-sm" id="btnConfirmFulfill">提交完成 · 领取 生态币(ECO)</button>
+      </div>
+    </div>
+  </div>
+  <script src="/js/shell.js?v=13"></script>
+  <script src="/js/appeals.js?v=13"></script>
+</body>
+</html>
+
+
+
+
+
