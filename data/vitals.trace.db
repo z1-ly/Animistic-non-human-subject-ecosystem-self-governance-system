@@ -1,0 +1,51 @@
+2026-06-23 22:23:11.039624+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS vital_sign_records (\000a    id INTEGER PRIMARY KEY [*]AUTOINCREMENT,\000a    entity_id BIGINT NOT NULL,\000a    node_id BIGINT NOT NULL,\000a    sensor_type VARCHAR(50) NOT NULL,\000a    value DOUBLE NOT NULL,\000a    protocol VARCHAR(20),\000a    recorded_at TIMESTAMP NOT NULL\000a)\000a"; expected "HASH, CONSTRAINT, COMMENT, UNIQUE, NOT NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS vital_sign_records (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    entity_id BIGINT NOT NULL,
+    node_id BIGINT NOT NULL,
+    sensor_type VARCHAR(50) NOT NULL,
+    value DOUBLE NOT NULL,
+    protocol VARCHAR(20),
+    recorded_at TIMESTAMP NOT NULL
+)
+ [42001-224]
+2026-06-23 22:23:11.773085+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "sqlite_master" not found (this database is empty); SQL statement:
+SELECT sql FROM sqlite_master WHERE type='table' AND name=? [42104-224]
+2026-06-23 22:26:45.149075+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS vital_sign_records (\000a    id INTEGER PRIMARY KEY [*]AUTOINCREMENT,\000a    entity_id BIGINT NOT NULL,\000a    node_id BIGINT NOT NULL,\000a    sensor_type VARCHAR(50) NOT NULL,\000a    value DOUBLE NOT NULL,\000a    protocol VARCHAR(20),\000a    recorded_at TIMESTAMP NOT NULL\000a)\000a"; expected "HASH, CONSTRAINT, COMMENT, UNIQUE, NOT NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS vital_sign_records (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    entity_id BIGINT NOT NULL,
+    node_id BIGINT NOT NULL,
+    sensor_type VARCHAR(50) NOT NULL,
+    value DOUBLE NOT NULL,
+    protocol VARCHAR(20),
+    recorded_at TIMESTAMP NOT NULL
+)
+ [42001-224]
+2026-06-23 22:26:45.946654+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "sqlite_master" not found (this database is empty); SQL statement:
+SELECT sql FROM sqlite_master WHERE type='table' AND name=? [42104-224]
+2026-06-23 22:26:46.049189+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "vital_sign_records" not found (this database is empty); SQL statement:
+SELECT * FROM vital_sign_records
+WHERE entity_id = ? AND sensor_type = ? AND recorded_at BETWEEN ? AND ?
+ORDER BY recorded_at ASC
+ [42104-224]
+2026-06-23 22:26:46.111298+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "vital_sign_records" not found (this database is empty); SQL statement:
+INSERT INTO vital_sign_records (entity_id, node_id, sensor_type, value, protocol, recorded_at)
+VALUES (?, ?, ?, ?, ?, ?)
+ [42104-224]
+2026-06-23 22:27:17.647205+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "vital_sign_records" not found (this database is empty); SQL statement:
+SELECT COUNT(*) FROM vital_sign_records [42104-224]
+2026-06-23 22:27:17.649717+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "vital_sign_records" not found (this database is empty); SQL statement:
+SELECT * FROM vital_sign_records
+WHERE entity_id = ?
+ORDER BY recorded_at DESC
+LIMIT ?
+ [42104-224]

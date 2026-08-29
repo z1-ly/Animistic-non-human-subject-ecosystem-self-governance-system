@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>修复工程与生态流通 — 万物有灵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=14">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="app">
+    <div id="appShell"></div>
+    <main class="page-main page-enterprise">
+      <section class="hero-panel ledger-hero">
+        <div class="hero-badge">ENTERPRISE FLOW · ECO CIRCULATION</div>
+        <h1 class="hero-title" style="font-size:1.2rem">修复工程与生态流通</h1>
+        <p class="hero-desc">
+          整合<strong>任务评估</strong>、<strong>生态币发放</strong>、<strong>智能合约还款</strong>全流程。
+          根据企业修复行为精准核算生态币奖励，任务结束后自动还款给智能合约。
+        </p>
+      </section>
+
+      <div class="tasks-tabs">
+        <button class="stream-tab active" data-tab="tasks">已接取任务</button>
+        <button class="stream-tab" data-tab="evaluate">评估结算</button>
+      </div>
+
+      <!-- 已接取任务 -->
+      <section class="panel tab-panel" id="panelTasks">
+        <div class="panel-header">
+          <span class="panel-title">我已接取的修复任务</span>
+          <span class="tag">MY TASKS</span>
+        </div>
+        <div class="panel-body">
+          <div class="enterprise-task-list" id="enterpriseTaskList"></div>
+        </div>
+      </section>
+
+      <!-- 评估结算 -->
+      <section class="panel tab-panel hidden" id="panelEvaluate">
+        <div class="panel-header">
+          <span class="panel-title">任务评估与结算</span>
+          <span class="tag">AI AUTOMATED EVALUATION</span>
+        </div>
+        <div class="panel-body">
+          <div class="eval-auto-info">
+            <p><strong>✦ 自动化评估机制：</strong>系统将自动获取最近24小时传感器实时数据，对比诉求基线数据和验收标准，计算改进比率和AI评分，精准核算生态币奖励。</p>
+          </div>
+          <div class="form-group">
+            <label>选择待评估任务</label>
+            <select id="evalTaskSelect" class="form-control"></select>
+          </div>
+          <div id="evalTaskDetail"></div>
+          <div class="eval-action hidden" id="evalAction">
+            <button class="btn btn-primary" id="btnEvaluate">✦ 启动AI自动化评估</button>
+            <p class="eval-hint">点击后系统将基于传感器数据自动评估修复效果并发放生态币</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/shell.js?v=8"></script>
+  <script src="/js/enterprise.js?v=1"></script>
+</body>
+</html>

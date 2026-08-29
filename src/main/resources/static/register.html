@@ -1,0 +1,110 @@
+﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>身份管理 — 万物有灵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=14">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="app">
+    <div id="appShell"></div>
+    <main class="page-main page-register">
+      <section class="hero-panel">
+        <div class="hero-badge">IDENTITY · MANAGEMENT</div>
+        <h1 class="hero-title">身份管理</h1>
+        <p class="hero-desc">管理您的人类节点身份，切换登录状态，查看链上钱包余额。</p>
+      </section>
+
+      <section class="panel" id="loggedInPanel">
+        <div class="panel-header">
+          <span class="panel-title">当前身份</span>
+          <span class="tag tag-success">LOGGED IN</span>
+        </div>
+        <div class="panel-body">
+          <div class="register-success-card">
+            <div class="register-success-icon">✓</div>
+            <h3>已登录为人类节点</h3>
+            <div class="register-info-grid">
+              <div class="register-info-item">
+                <span class="register-info-label">节点名称</span>
+                <span class="register-info-value" id="regName">—</span>
+              </div>
+              <div class="register-info-item">
+                <span class="register-info-label">节点 ID</span>
+                <code class="register-info-value" id="regPeerId">—</code>
+              </div>
+              <div class="register-info-item">
+                <span class="register-info-label">链上钱包</span>
+                <code class="register-info-value" id="regWallet">—</code>
+              </div>
+              <div class="register-info-item">
+                <span class="register-info-label">生态币余额</span>
+                <span class="register-info-value" id="regBalance">—</span>
+              </div>
+            </div>
+            <div class="register-actions">
+              <a href="/tasks.html" class="btn">前往任务大厅</a>
+              <button class="btn btn-secondary" id="btnLogout">退出登录 · 切换身份</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="notLoggedInPanel">
+        <div class="panel-header">
+          <span class="panel-title">注册新身份</span>
+          <span class="tag">REGISTER</span>
+        </div>
+        <div class="panel-body form-grid">
+          <div class="form-group">
+            <label>姓名或组织名称</label>
+            <input type="text" id="registerName" class="form-control" placeholder="输入您的姓名或组织名称">
+          </div>
+          <div class="form-group form-wide">
+            <button class="btn" id="btnRegister">✦ 注册为人类节点</button>
+            <span class="form-hint">注册后将生成唯一的链上节点 ID，您可以在任务大厅接取修复任务。</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">人类节点说明</span>
+          <span class="tag">HOW IT WORKS</span>
+        </div>
+        <div class="panel-body">
+          <div class="how-it-works">
+            <div class="how-item">
+              <div class="how-number">01</div>
+              <h4>注册身份</h4>
+              <p>填写您的姓名或组织名称，系统将为您创建链上身份</p>
+            </div>
+            <div class="how-item">
+              <div class="how-number">02</div>
+              <h4>接取任务</h4>
+              <p>在任务大厅查看环境实体发布的修复悬赏，选择合适的任务</p>
+            </div>
+            <div class="how-item">
+              <div class="how-number">03</div>
+              <h4>完成修复</h4>
+              <p>执行生态修复行动，提交完成证明</p>
+            </div>
+            <div class="how-item">
+              <div class="how-number">04</div>
+              <h4>获得奖励</h4>
+              <p>任务验收通过后，生态币(ECO)将自动打入您的钱包</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/js/shell.js?v=8"></script>
+  <script src="/js/register.js?v=3"></script>
+</body>
+</html>

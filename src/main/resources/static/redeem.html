@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>兑换生态资源 — 万物有灵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=13">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="app">
+    <div id="appShell"></div>
+    <main class="page-main page-redeem">
+      <section class="hero-panel ledger-hero">
+        <div class="hero-badge">REDEEM · ECOLOGICAL RESOURCES</div>
+        <h1 class="hero-title" style="font-size:1.2rem">兑换生态资源</h1>
+        <p class="hero-desc">
+          人类节点可使用<strong>生态币（ECO）</strong>向链上<strong>非人自然主体</strong>兑换各类生态价值资源。
+          生态币按目录定价全额回流至对应自然体国库，用于未来生态修复与治理。
+        </p>
+      </section>
+
+      <!-- 我的生态币余额 -->
+      <section class="panel balance-panel">
+        <div class="panel-header">
+          <span class="panel-title">我的生态币余额</span>
+          <span class="tag">ECO BALANCE</span>
+        </div>
+        <div class="panel-body">
+          <div class="balance-card">
+            <div class="balance-amount" id="ecoBalance">0.00</div>
+            <div class="balance-unit">ECO</div>
+            <div class="balance-meta">可用兑换生态资源</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="redeem-tabs" id="categoryTabs">
+        <button class="stream-tab active" data-cat="">全部</button>
+      </div>
+
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">生态价值资源目录</span>
+          <span class="tag">14 类 · 定价目录</span>
+        </div>
+        <div class="panel-body">
+          <div class="redeem-catalog" id="redeemCatalog">加载中...</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal hidden" id="redeemModal">
+    <div class="modal-box modal-redeem">
+      <h3 id="modalTitle">兑换生态资源</h3>
+      <p class="modal-hint" id="modalHint"></p>
+      <div class="redeem-modal-meta" id="modalMeta"></div>
+      <div class="form-group">
+        <label>服务提供自然主体</label>
+        <select id="modalEntityId" class="form-control"></select>
+      </div>
+      <div class="form-group">
+        <label>兑换数量（<span id="modalUnit">—</span>）</label>
+        <input id="modalQuantity" type="number" min="0.1" step="0.1" class="form-control" />
+      </div>
+      <div class="redeem-price-box">
+        <div class="redeem-price-row">
+          <span>单价</span>
+          <strong id="modalUnitPrice">— ECO</strong>
+        </div>
+        <div class="redeem-price-row total">
+          <span>应付生态币</span>
+          <strong id="modalTotalEco">— ECO</strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>备注（可选）</label>
+        <input id="modalNote" type="text" class="form-control" placeholder="用途说明" />
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary btn-sm" id="btnCancelRedeem">取消</button>
+        <button class="btn btn-sm" id="btnConfirmRedeem">确认兑换 · 支付生态币</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/shell.js?v=8"></script>
+  <script src="/js/redeem.js?v=9"></script>
+</body>
+</html>
+
+
+
+
+

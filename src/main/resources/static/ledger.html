@@ -1,0 +1,98 @@
+﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>链上账本 — 万物有灵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=13">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="app">
+    <div id="appShell"></div>
+    <main class="page-main page-ledger">
+      <section class="hero-panel ledger-hero">
+        <div class="hero-badge">DISTRIBUTED LEDGER · SMART CONTRACT</div>
+        <h1 class="hero-title" style="font-size:1.2rem">非人类实体法人链</h1>
+        <p class="hero-desc">
+          平台基于智能合约与分布式账本，为自然权利主体与人类参与者赋予独立数字身份。
+          自然体发布 <strong>生态币(ECO)</strong> 悬赏，人类作为<strong>对等节点</strong>接取任务并获得链上报酬。
+        </p>
+        <div class="ledger-status" id="chainStatus">验证链完整性...</div>
+      </section>
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">智能合约资金池</span>
+          <span class="tag">SMART CONTRACT</span>
+        </div>
+        <div class="panel-body">
+          <div class="contract-status-card" id="contractStatusCard">
+            <div class="contract-status-header">
+              <span class="contract-name">主生态币资金池</span>
+              <span class="tag tag-success">运行中</span>
+            </div>
+            <div class="contract-status-grid">
+              <div class="contract-status-item">
+                <span class="contract-status-label">总发行量</span>
+                <span class="contract-status-value" id="contractTotalBalance">—</span>
+              </div>
+              <div class="contract-status-item">
+                <span class="contract-status-label">可用余额</span>
+                <span class="contract-status-value success" id="contractAvailableBalance">—</span>
+              </div>
+              <div class="contract-status-item">
+                <span class="contract-status-label">已借出</span>
+                <span class="contract-status-value warning" id="contractLentBalance">—</span>
+              </div>
+              <div class="contract-status-item">
+                <span class="contract-status-label">借出率</span>
+                <span class="contract-status-value" id="contractLentRate">—</span>
+              </div>
+            </div>
+            <div class="contract-status-footer">
+              <code class="contract-address" id="contractAddress">—</code>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="panel-header">
+          <span class="panel-title">法人主体钱包</span>
+          <span class="tag">WALLETS</span>
+        </div>
+        <div class="panel-body">
+          <div class="wallet-cards" id="walletCards"></div>
+        </div>
+      </section>
+
+      <div class="ledger-grid">
+        <section class="panel">
+          <div class="panel-header">
+            <span class="panel-title">分布式账本 · 区块</span>
+            <span class="tag">BLOCKS</span>
+          </div>
+          <div class="panel-body">
+            <div class="block-list" id="blockList"></div>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-header">
+            <span class="panel-title">链上交易流</span>
+            <span class="tag">TRANSACTIONS</span>
+          </div>
+          <div class="panel-body">
+            <div class="tx-list" id="txList"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="/js/shell.js?v=8"></script>
+  <script src="/js/ledger.js?v=8"></script>
+</body>
+</html>
+
